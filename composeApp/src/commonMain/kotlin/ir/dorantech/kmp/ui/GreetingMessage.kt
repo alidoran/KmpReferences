@@ -1,6 +1,8 @@
-package ir.dorantech.kmp
+package ir.dorantech.kmp.ui
 
-class Greeting {
+import ir.dorantech.kmp.getPlatform
+
+class GreetingMessage {
     private val platform = getPlatform()
 
     fun greet(): String {

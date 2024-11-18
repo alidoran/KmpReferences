@@ -8,4 +8,7 @@ sealed interface Routes {
 
     @Serializable
     data object FirstPage: Routes
+
+    @Serializable
+    data object KtorSimple: Routes
 }

@@ -8,9 +8,11 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import ir.dorantech.kmp.data.model.FirstScreenButtons
 import ir.dorantech.kmp.navigation.Routes
-import ir.dorantech.kmp.ui.DefaultSampleScreen
-import ir.dorantech.kmp.ui.FirstScreen
+import ir.dorantech.kmp.ui.composable.DefaultSampleScreen
+import ir.dorantech.kmp.ui.composable.FirstScreen
+import ir.dorantech.kmp.ui.composable.KtorSimpleScreen
 import org.jetbrains.compose.ui.tooling.preview.Preview
 
 @Composable
@@ -27,8 +29,13 @@ fun App(modifier: Modifier = Modifier) {
             ) {
                 composable<Routes.FirstPage> {
                     FirstScreen(
-                        onDefaultSampleClick = {
-                            navController.navigate(Routes.DefaultSample)
+                        onButtonClick = {clickedButton ->
+                            when (clickedButton){
+                                FirstScreenButtons.DefaultSample ->
+                                    navController.navigate(Routes.DefaultSample)
+                                FirstScreenButtons.KtorSimple ->
+                                    navController.navigate(Routes.KtorSimple)
+                            }
                         },
                         modifier = modifier
                     )
@@ -40,6 +47,11 @@ fun App(modifier: Modifier = Modifier) {
                         },
                         modifier
                     )
+                }
+                composable<Routes.KtorSimple> {
+                    KtorSimpleScreen({
+                        navController.navigate(Routes.FirstPage)
+                    }, modifier)
                 }
             }
         }
