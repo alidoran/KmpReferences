@@ -4,11 +4,14 @@ import kotlinx.serialization.Serializable
 
 sealed interface Routes {
     @Serializable
-    data object DefaultSample : Routes
+    data object DefaultKmp : Routes
 
     @Serializable
-    data object FirstPage: Routes
+    data object Main: Routes
 
     @Serializable
-    data object KtorSimple: Routes
+    data object Ktor: Routes
+
+    @Serializable
+    data object Kodein: Routes
 }

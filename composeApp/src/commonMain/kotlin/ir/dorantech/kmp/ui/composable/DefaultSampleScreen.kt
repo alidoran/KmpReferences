@@ -26,7 +26,7 @@ fun DefaultSampleScreen(
 ) {
     var showContent by remember { mutableStateOf(false) }
     Column(modifier.fillMaxWidth(), horizontalAlignment = Alignment.End) {
-        Button(onClick = {onBackClick(FirstScreenButtons.DefaultSample)}) {
+        Button(onClick = {onBackClick(FirstScreenButtons.DefaultKmpBtn)}) {
             Text("Back")
         }
     }

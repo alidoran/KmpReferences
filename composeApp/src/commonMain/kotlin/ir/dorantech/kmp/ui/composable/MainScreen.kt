@@ -10,7 +10,7 @@ import androidx.compose.ui.Modifier
 import ir.dorantech.kmp.data.model.FirstScreenButtons
 
 @Composable
-fun FirstScreen(
+fun MainScreen(
     onButtonClick: (FirstScreenButtons) -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -18,11 +18,14 @@ fun FirstScreen(
         modifier = modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Button(onClick = { onButtonClick(FirstScreenButtons.DefaultSample) }) {
+        Button(onClick = { onButtonClick(FirstScreenButtons.DefaultKmpBtn) }) {
             Text("Default Sample")
         }
-        Button(onClick = { onButtonClick(FirstScreenButtons.KtorSimple) }){
+        Button(onClick = { onButtonClick(FirstScreenButtons.KtorBtn) }){
             Text("Ktor")
+        }
+        Button(onClick = { onButtonClick(FirstScreenButtons.KodeinBtn) }){
+            Text("Kodein")
         }
     }
 }
